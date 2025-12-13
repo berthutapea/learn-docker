@@ -1,0 +1,59 @@
+Bagian 1 Docker Dasar
+1. Pendahuan:
+
+2. Slide Source Code:
+	- Slide: https://docs.google.com/presentation/d/1LoCIoqR68t-y7P7eOs_TVoooZy4mq-tc2cwInQAtfy0/edit?usp=sharing
+	- Source Code: https://github.com/ProgrammerZamanNow/belajar-docker-dasar
+
+3. Pendahuluan:
+
+4. Pengenalan Container:
+	- Didalam dunia infrastructure kita sudah terbiasa yang namanya VM (Virtual Machine) atau kita sewa misalnya hosting vps itu sebenarnya kita menyewa sebuah virtual machine
+	- Kalau teman-teman misalnya anggap aja punya data center sendiri maka infrastructure teman-teman biasa nya kita akan menginstal namanya hypervisor atau istilah virtual machine manager ada banyak aplikasi ini contohnya vm ware atau virtual box dan sebagainya
+	- Bagaimana dengan container? Berbeda dengan vm kalau kita menggunkan container sendri itu berfokus pada sisi aplikasinya, jadi kontainer senidri sebenarnya berjalan diatas aplikasi yang namanya container manager, jadi mirip dengan vm itu kan dia jalan diatas yang namanya hypervisor atau virtual machine managaer, tapi kalau biasanya container dia jalannya di container manager, nah container manager otomatis berjalan di sistem operasi, contohnya teman-teman kalau menginstal docker, dan docker otomatis berjalan di laptop teman-teman yang ada sistem operasinya
+	- Yang membedakan dengan vm adalah kalau teman-teman mengunaakan container kita bisa mempackage aplikasi kita dan dependency aplikasi kita tanpa harus menggabungkan sistem operasinya, jadi container nya akan menggunkan sistem operasi host dimana container manager nya berjalan jadi kalau misalnya di install di Linux containernya maka dia itu akan menggunakan sistem operasi Linux bawaan dari container manager nya, jadi dia tidak perlu lagi menginstall sistem operasi di dalam si container nya, beda kalau vm walaupun misalnya teman-teman sudah pakai Linux misalnya abis itu install vm didalam vm nya harus kita install Linux lagi misalnya seperti itu. 
+	- Nah kalau kita menggunakan container si container itu bisa sistem operasi bawaan dari si container managernya, jadi misalnya di sharing sistem operasi nya, nah karena itu dia tidak butuh sistem opearasi sendiri
+	- Nah selain itu biasanya ukuran container biasanya hanya itungan megabyte, kenapa? karena sesuai dengan besar kecilnya aplikasi kita. Kalau aplikasi kita cuman angkanya puluhan mega, yaudah berarti isi nya cuman puluhan mega saja. Berbeda dengan vm bisa hampir mungkin giga atau hampir lebih dari satu giga, kenapa? karena di dalam vm itu ada sistem operasinya. Jadi contohnya teman-teman udah pakai ubuntu, teman-teman install virtual box, habis itu install vm didalamnya teman-teman harus intsal sistem operasi lagi, misalnya ubuntu lagi seperti itu. Nah tapi kalau teman-teman menggunakan container teman-teman bisa pakai langsung sistem operasi bawaannya, jadi teman-teman tidak perlu membuat atau memasukan sistem operasi ke container nya lagi
+	- Jadi kurang lebih gambaran nya seperti ini jadi infrastucturenya lalu disini kita mempunyai sistem operasi contohnya misalnya di laptop teman-teman menggunakan windows kah, menggunkan mac atau menggunakan Linux lalu kita akan menginstall docker diatas sistem operasi nya docker adalah contoh container manager, yang membedakan adalah dengan menggunakan container manager ini kita akan bisa membuat istilahnya ini container-container langsung isinya aplikasi aja ada lagi sistem operasi nya, nah kalau gitu apa bedanya kalau seperti ini install langsung aja aplikasi nya tanpa harus mengggunakan docker, nah yang berbeda adalah container itu antar container nya itu terisolalsi jadi dia tidak akan menganggu container lainnya, bayakngkan teman-teman misalnya install database MySQL misalnya lalu install nya ada 3 di laptop teman-teman tanpa mengggunakan container maka yang akan terjadi adalah ketiga tiganya akan terjadi bentrok yang pertama mungin portnya bentrok akhirnya teman-teman harus ganti-ganti port nya, nah kalau menggunakan container dia terisolasi di satu container tersebut, jadi teman-teman mau bikin 3 container MySQL semua itu tidak akan menjadi masalah karena meraka terisolasi, di setiap containernya jadi tidak perlu pusing lagi mikin container sebelahnya, jadi contohnya di aplikasi a saya menginstall php tapi versi 2 misalnnya, dan di app b saya menggukan php versi 3 dan app c saya menggintal php versi 4, nah itu bisa dilakukan jadi ketiga-tiganya terisolasi,nah yangkan teman-teman lagusng mengintal di os maka akan binggung gimana caranya mengintstall php di satu sistem operasi misalnya sperti itu jadi lumayan ribet, kalau menggunkan container itu semuanya menjadi sederhana.
+	- kenapa sekrang container sangat populernya karena yang pertama dia ringan nggak perlu install sistem operasi lagi di dalam container nya yang kedua lebih fleksibelnya, ketiga yang paling pasti adalah bisa menggunkan rescore yang lebih sedikit, bayangkan kalau di laptop teman-teman menginstall beberapa sistem operasi pakai vm mungkin 2 atau 3 vm aja sudah habis gitunya resorce nya, tapi kalau container teman-teman bisa di gunakan sebanyak-banyak nya, smapai misalnya laptopnya tidak bisa menampung lagi, karena container itu sengat kecil sekali jadi ini tentang container.
+
+5. Pengenalan Docker:
+	- Docker itu adalah salah satu implementasi dari container manager, jadi aplikasi yang digunakan untuk memange container salah satunya saat ini paling populer itu adalah docker. kenapa paling populer? Karena paling mudah di gunakannya , jadi doker itu sederhana hanya salah satu implementasi dari container manager.
+
+6. Arsitektur Docker:
+	- Docker menggunakan arsitektur clinet dan server
+	- Docker server itu disebut docker daemon
+	- Kita mengetika perintah nya di docker clinet tapi itu akan semua mengirimkan perintahnya itu ke docker server nya atau docker daemonnya
+	- Saat kita menginstall docker itu sudah terdapat docker client dan dan docker daemon
+	- Docker client dan docker daemon bisa berjalan di satu sistem yang sama
+	- Docker client dan docker daemon berkomunikasi menggunakan rest api
+
+7. Menginstall Docker:
+	- Docker bisa di install hampir semua di sistem operasi
+	- Docker desktop itu bisa digunakan di mac dan di windows, nah tapi kalau teman-teman menggunakan Linux teman-teman langsung install dockernya, nah kenap butuh berbeda dengan windows, mac, dan Linux? Karena samapai saat ini kebanyakan docker itu berjalannya di sistem operasi Linux. Jadi ketika teman-teman menginstal di Linux dia tidak butuh lagi istilah sistem operasi untuk dockernya jadi dia bisa langsung menggunakan bawahan Linux yang kita gunakan, nah berbeda kalau misalanya teman-teman menggunakan windows dan mac, biasanya kalau teman-teman menggunakan windows dan mac, maka si docker container dia akan membuat sebuah virtualisasi di dalamnnya adalah sistem operasi Linux
+	- Untuk mengecek docker daemon sudah berjalan gunakan perintah: docker version
+
+8. Docker Registry:
+	- Docker registry itu adalah tempat kita menyimpan docker image, nah intinya adalah semua docker image biasanya kita simpan di dalam docker registry
+	- Dengan kita menggunakan docker registry kita bisa menyimpan image-image yang kita mau atau bahkan kita bisa menggunakan image yang lain yang kalau teman-teman mau yang otomatis kalau teman-teman mau ambil itu teman-teman bisa ambil dari docker registry
+	- Daftar melalui link ini: https://hub.docker.com
+
+9. Docker Image:
+	- Docker image itu mirip sekali installer aplikasi, jadi anggap aja ini sebagai installer container jadi ini namanya adalah image. Nah dimana dalam docker image itu terdapat aplikasi dan juga dependency-dependency yang dibutuhkan si aplikasi tersebut
+	- Sebelum teman-teman menjalankan aplikasi di docker itu kita harus istilahnya itu mendowload dulu si docker imagenya jadi tanpa docker imagenya teman-teman tidak bisa menjalankan aplikasi dockernya.
+	- Untuk melihat docker image yang terdapat di dalam docker daemon kita bisa menggunakan perintah: docker image ls
+	- Untuk download docker image dari docker registry, kita bisa gunakan perintah: docker image pull namaimage:tag, contohnya: docker image pull redis:latest,dan untuk menghapus perintahnya: docker image rm namaimage:tag, contohnya: docker image rm redis:latest
+
+10. Docker Container:
+	- Kalau misalnya image seerti installer aplikasi nya, maka docker continer mirips sekali seperti aplikasi hasil installernya
+	- jadi dari satu docker image kita bisa gunakan untuk membuat beberapa docker container, asalkan nama docker container nya berbeda
+	- jikalau kita sudah membuat docker container, maka docker image yang digunakan tidak bisa di hapus lagi, sebenarnya docker container tidak mengcopy isi docker image saja, tapi hanya menggunakannya isinya saja
+	- saat kita membuat container, secara default container tersebut tidak akan berjalan, jadi mirip seperti ketika kita menginstall aplikasi, jika tidak kita jalankan, maka aplikasi tersbut tidak akan berjalan, begitu juga container, oleh karena itu setelah membuat container, kita perlu menjalankannya jika memang ingin menjalankan containernya
+	- untuk melihat semua container baik yang sedang berjalan atau tidak di docker daemon kita bisa gunakan perintah: docker container ls -a
+	- untuk melihat container yang sedang berjalan saja gunakan perintah: docker container ls
+	- untuk membuat container kita bisa gunakan perintah: docker container create --name namacontainer namaimage:tag
+	- untuk nama container tidak boleh sama harus unik dan berbeda
+	- untuk menjalankan container yang sudah kita buat, kita bisa gunakan perintah: docker container start containerId/namacontainer
+	- ingat nya untuk port itu port di dalam container, jadi tidak ada hubungannya dengan port sistem operasi yang kita gunakanm jadi walaupun di laptop teman-teman misalnya sudah menginstall dengan port yang sekkarang, tenang aja tidak akan bentrok karena daia menggunakan port yang ada di dalam container nya bukan di sistem operasi kita
+	- untuk menghentikan container kita bisa gunakan perintah: docker container stop containerId/namacontainer
+	- untuk menghapus container yang sudah berhenti kita bisa gunakan perintah: docker container rem containerId/namacontainer
