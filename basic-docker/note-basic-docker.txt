@@ -57,3 +57,8 @@ Bagian 1 Docker Dasar
 	- ingat nya untuk port itu port di dalam container, jadi tidak ada hubungannya dengan port sistem operasi yang kita gunakanm jadi walaupun di laptop teman-teman misalnya sudah menginstall dengan port yang sekkarang, tenang aja tidak akan bentrok karena daia menggunakan port yang ada di dalam container nya bukan di sistem operasi kita
 	- untuk menghentikan container kita bisa gunakan perintah: docker container stop containerId/namacontainer
 	- untuk menghapus container yang sudah berhenti kita bisa gunakan perintah: docker container rem containerId/namacontainer
+
+11. Container Log:
+	- Kadang kalau terjadi masalah dengan aplikasi yng kita jalankan di dalam containe sering kalai kita ingin melihat log dari aplkasinya nah hal ini dilakukan di log di dalam aplikasinya sehingga kita mudah untuk mendubugging untuk mendapat problem dari permasalahan tersebut
+	- untuk melihat log di aplikaso di container kita bisa gunakan perintah sebagai berikut: docker container logs containerId/namacontainer
+	- kalau teman-teman mau melihat secara realtime bisa gunakan perintah: docker container logs -f containerId/namacontainer
