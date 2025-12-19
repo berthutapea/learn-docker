@@ -62,3 +62,11 @@ Bagian 1 Docker Dasar
 	- Kadang kalau terjadi masalah dengan aplikasi yng kita jalankan di dalam containe sering kalai kita ingin melihat log dari aplkasinya nah hal ini dilakukan di log di dalam aplikasinya sehingga kita mudah untuk mendubugging untuk mendapat problem dari permasalahan tersebut
 	- untuk melihat log di aplikaso di container kita bisa gunakan perintah sebagai berikut: docker container logs containerId/namacontainer
 	- kalau teman-teman mau melihat secara realtime bisa gunakan perintah: docker container logs -f containerId/namacontainer
+
+12. Container Exec:
+	- saat kita membuat container aplikasi yang terdapat di container hanya bisa diakases dari si containernya itu sendiri, oleh karena itu kdang kita perlu masuk ke dalam container nya itu sendiri
+	- untuk masuk ke dalam container kita bisa menggunakan fitur container exec dimana untuk mengeksekusi kode program yang terdapat di dalam si containernya
+	- untuk masuk ke dalam containernya kita bisa mencoba mengekseskusi program bash script yang terdapat di dalam containernya dengan bantuan container exec: docker container exec -t -i containerId/namcontainer /bin/bash
+	- -i adalah argument interaktif menjaga input tetap aktif 
+	- -t adalah argument untuk alokasi pseudo-TTY (terminal akses)
+	- dan unutk /bin/bash contoh program yang terdapat di dalam container
