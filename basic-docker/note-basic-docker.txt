@@ -70,3 +70,12 @@ Bagian 1 Docker Dasar
 	- -i adalah argument interaktif menjaga input tetap aktif 
 	- -t adalah argument untuk alokasi pseudo-TTY (terminal akses)
 	- dan unutk /bin/bash contoh program yang terdapat di dalam container
+
+13. Container Port:
+	- saat menjalankan container tersebut terisolasi di dalam docker
+	- artinya sistem host (misal laptop kita), tidak bisa mengakses aplikasi yang ada di dalam container secara langsung, salah satu caranya adalah harus menggunakan container exec untuk masuk ke dalam container nya	- biasanya sebuah aplikasi berjalan pada port tertentu misal saat kita menjalankan aplikasi redis dia berjalan pada port 6479 kita bisa melihat port apa yang digunakan ketika melihat semua daftar container
+	- docker memiliki kemampuan untuk melakukan port forwading yaitu meneruskan sebuah port yang tedapat di sistem host nya ke dalam docker container
+	- cara ini cocok jika kita ingin mengekspos port yang terdapat di container ke luar melalui sistem hosttnya
+	- untuk melakukan port forwading kita bisa menggunakan perintah berikut ketika membuat containernya: docker container create --name namacontainer -publish posthot:portcontainer image:tag
+	- jika kita ingin melakukan port forwading lebih dari satu kita bisa tambahakan dua kali parameter --publish
+	- publish juga bisa disingkat menggunakan -p
