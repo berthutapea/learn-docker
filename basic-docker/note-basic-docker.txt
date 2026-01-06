@@ -79,3 +79,9 @@ Bagian 1 Docker Dasar
 	- untuk melakukan port forwading kita bisa menggunakan perintah berikut ketika membuat containernya: docker container create --name namacontainer -publish posthot:portcontainer image:tag
 	- jika kita ingin melakukan port forwading lebih dari satu kita bisa tambahakan dua kali parameter --publish
 	- publish juga bisa disingkat menggunakan -p
+
+14. Container Environment Variable:
+	- saat membuat aplikasi menggunakan environment variable adalah salah satu teknik agar konfigurasi aplikasi bisa diubah secara dinamis
+	- dengan menggunakan environment variable kita bisa mengubah-ubah konfigurasi aplikasi tanpa harus mengubah kode aplikasinya lagi
+	- docker container memiliki parameter yang bisa kita gunakan untuk mengirim environment variable ke aplikasi yang terdapat di dalam container
+	- untuk menambah environment variable kita bisa menggunakan perintah --env atau -e misal: docker container create --name namacontainer --env KEY="value" --env KEY2="value" image:tag
