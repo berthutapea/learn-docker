@@ -85,3 +85,9 @@ Bagian 1 Docker Dasar
 	- dengan menggunakan environment variable kita bisa mengubah-ubah konfigurasi aplikasi tanpa harus mengubah kode aplikasinya lagi
 	- docker container memiliki parameter yang bisa kita gunakan untuk mengirim environment variable ke aplikasi yang terdapat di dalam container
 	- untuk menambah environment variable kita bisa menggunakan perintah --env atau -e misal: docker container create --name namacontainer --env KEY="value" --env KEY2="value" image:tag
+
+15. Container Stats:
+	- saat menjalankan beberapa container di sitem host pengunaan resource seperti cpu dan memory hanya terlihat digunakan oleh docker saja
+	- kadang kita ingin melihat detail dari pengunaan resource untuk tiap containernya
+	- untung nya docker memliliki kemampuan untuk melihat penggunaan resource dari tiap container yang sedang berjalan
+	- kita bisa gunakan perintah: docker container stats
