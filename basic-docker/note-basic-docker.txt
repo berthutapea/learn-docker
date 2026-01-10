@@ -91,3 +91,12 @@ Bagian 1 Docker Dasar
 	- kadang kita ingin melihat detail dari pengunaan resource untuk tiap containernya
 	- untung nya docker memliliki kemampuan untuk melihat penggunaan resource dari tiap container yang sedang berjalan
 	- kita bisa gunakan perintah: docker container stats
+
+16. Container Resource Limit:
+	- saat membuat container secara default dia akan mengguakan sema cpu dan memory yang diberikan ke docker (mac dan windows) dan akan menggunakan semua cpu dan memory yang tersedia di sitem host (linux)
+	- jika terjadi kesalahan misal container terlalu banyak memakan cpu dan memory maka bisa berdampak terhadap performa container lain atau bahkan ke sistem host
+	- oleh karena itu ada baiknya ketika kita membuat containe kita memberikan resource limit terhadap container nya
+	- saat membuat container kita bisa menentukan jumlah memory yang bisa digunakan oleh container ini dengan menggunakan perintah --memory diikuti dengan angka memory yang diperbolehkan untuk digunakan
+	- kita bisa menambahkan ukuran dalam bentuk b (bytes) k (kilo bytes) m (mega bytes) atau g (giga bytes) misal 100m artinya 100 mega bytes
+	- selain mengatur memory kita bisa menentukan berapa jumlah cpu yang bisa digunkan oleh container dengan parameter --cpus
+	- jika misal kita set dengan nilai 1.5 artinya container bisa menggunkan satu dan setengah cpu core
