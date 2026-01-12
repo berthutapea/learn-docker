@@ -100,3 +100,14 @@ Bagian 1 Docker Dasar
 	- kita bisa menambahkan ukuran dalam bentuk b (bytes) k (kilo bytes) m (mega bytes) atau g (giga bytes) misal 100m artinya 100 mega bytes
 	- selain mengatur memory kita bisa menentukan berapa jumlah cpu yang bisa digunkan oleh container dengan parameter --cpus
 	- jika misal kita set dengan nilai 1.5 artinya container bisa menggunkan satu dan setengah cpu core
+
+17. Bind Mounts:
+	- bind mounts merupakan kemampuan melakuan mounting (sharing) file atau folder yang terdapat di sitem host ke container yang terdapat di docker
+	- fitur ini sangat berguna ketiak misal kita ingin mengirim konfigurasi dari luar container atau misal menyimpan data yang dibuat di aplikasi di dalam container ke dalam folder di sitem host
+	- jika file atau folder tidak ada di sistem host secara otomatis akan di buatkan oleh docker
+	- untuk melakukan mounting kita bisa menggunakan parameter --mount ketika membuat container
+	- isi dari parameter --mount memiliki aturan tersendiri
+	- type: tipe mount bind atau volume
+	- source: lokasi file atau folder di container
+	- readonly: jika ada maka file atau folder hanya bisa dibaca di container tidak bisa di tulis
+	- untuk melakukan mounting kita bisa menggunakan perintah berikut: docker container create --name namacontainer --mount "type=bind,source=folder,destination=folder,readonly" image:tag
