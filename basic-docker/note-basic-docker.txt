@@ -122,3 +122,8 @@ Bagian 1 Docker Dasar
 	- untuk membuat volume kita bisa gunakan perintah: docker volume create namavolume
 	- volume yang tidak dugunakan oleh container bisa kita hapus tapi jika volume digunakan oleh container maka tidak bisa kita hapus sampai container nya di hapus
 	- untuk menghapus volume kita bisa gunakan perintah: docker volume rm namavolume
+
+19. Container Volume:
+	- volume yang sudah kita buat bisa kita gunakan di container
+	- keuntungan menggunakan volume adalah jika container kita hapus data akan tetap aman di volume
+	- cara menggunakan volume di container sama dengan menggunakan bind mount kita bisa menggunakan parameter --mount namun dengan menggunakan type volume dan source nama volume
