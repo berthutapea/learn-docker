@@ -111,3 +111,14 @@ Bagian 1 Docker Dasar
 	- source: lokasi file atau folder di container
 	- readonly: jika ada maka file atau folder hanya bisa dibaca di container tidak bisa di tulis
 	- untuk melakukan mounting kita bisa menggunakan perintah berikut: docker container create --name namacontainer --mount "type=bind,source=folder,destination=folder,readonly" image:tag
+
+18. Docker Volume
+	- fitur bind mounts sudah ada sejak docker versi awal di versi terbaru direkomandasikan menggunakan docker volume
+	- docker volume mirip dengan bind mounts bedanya adalah terdapat management volume dimana kita bisa membuat volume melihat daftar volume dan menghapus volume
+	- volume sendiri bisa dianggap storage yang digunakan untuk menyimpan data bedanya dengan bind mounts pada bind mounts data disimpan pada sistem host sedangkan pada volume data di manage oleh docker
+	- saat kita membuat container dimanakah data di dalam container itu disimpan secara default semua data container disimpan di dalam volume
+	- jika kita coba melihat docker volume kita akan lihat bahwa ada banyak volume yang sudah terbuat walalupuun kita belum pernah membuatnyasama sekali
+	- kita bisa gunakan perintah berikut untuk melihat daftar volume: docker volume ls
+	- untuk membuat volume kita bisa gunakan perintah: docker volume create namavolume
+	- volume yang tidak dugunakan oleh container bisa kita hapus tapi jika volume digunakan oleh container maka tidak bisa kita hapus sampai container nya di hapus
+	- untuk menghapus volume kita bisa gunakan perintah: docker volume rm namavolume
