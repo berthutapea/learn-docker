@@ -148,3 +148,17 @@ Bagian 1 Docker Dasar
 	- isi file backup sekarang sudah di restore ke volume 
 	- delete container yang bisa kita gunakan untuk melakukan restore
 	- volume baru yang berisi data backup siap digunakan oleh container baru
+
+22. Docker Network:
+	- saat kita membuat container di docker secara default container akan saling terisolasi satu sama lain jadi kita mencoba memanggil antar container bisa di pastikan bahwa kita tidak akan bisa melakukannya
+	- docker memiliki fitur network yang bisa digunakan untuk membuat jaringan di dalam docker
+	- dengan menggunakan network kita bisa mengkoneksikan container dengan container lain dalam satu network yang sama
+	- jika beberapa container terdapat pada satu network yang sama maka secara otomatis container tersebut bisa saling berkomunikasi
+	- saat kita membuat network di docker kita perlu menentukan driver yang ingin kita gunakan ada banyak driver yang bisa kita gunakan tapi kadang ada syaray sebuah driver network bisa kita gunakan
+	- bridge yaitu driver yang digunakan untuk membuat network secara virtual yang memungkinkan container yang terkoneksi di bridge network yang sama saling berkomunikasi
+	- host yaitu driver yang digunakan untuk membuat network yang sama dengan sistem host host hanya jalan di docker Linux tidak bisa digunakan di mac atau di windows
+	- none yaitu driver untuk membuat network yang tidak bisa berkomunikasi
+	- untuk melihat network di docker kita bisa gunakan perintah: docker network ls
+	- untuk membuat network baru kita bisa menggunakan perintah: docker network create --driver namadriver namanetwork
+	- untuk mengahapus network kita bisa gunakan perintah: docker network rm namanetwork
+	- network kita tidak bisa dihapus jika sudah digunakan oleh container kita harus menghapus container nya terlebih dahulu dari network
