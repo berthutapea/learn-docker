@@ -138,3 +138,13 @@ Bagian 1 Docker Dasar
 	- delete container yang kita gunakan untuk melakukan backup
 	- melakukan backup secara manual agak sedikit ribet karena kita harus start container terlebih dahulu setelah backup hapus container nya lagi
 	- kita bisa menggunakan perintah run untuk mejalankan perintah di container dan gunakan parameter --rm untuk melakukan otomatis remove container setelah perintahnya selesai berjalan
+
+21. Restore Volume:
+	- setelah melakukan backup volume ke dalam file archive kita bisa menyimpan file archive backup tersebut ke tempat yang lebih aman misal ke cloud storage
+	- sekarang kita akan coba melakukan restore data backup ke volume baru untuk memastikan data backup yang kita lakukan tidak corrupt
+	- buat volume baru untuk lokasi restore data backup
+	- buat container baru dengan dua mount volume baru untuk restore backup dan bind mount folder dari sistem host yang berisi file backup
+	- lakukan restore menggunakan container dengan cara mengextract isi backup file ke dalam volume
+	- isi file backup sekarang sudah di restore ke volume 
+	- delete container yang bisa kita gunakan untuk melakukan restore
+	- volume baru yang berisi data backup siap digunakan oleh container baru
