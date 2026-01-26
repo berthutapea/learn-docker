@@ -170,3 +170,14 @@ Bagian 1 Docker Dasar
 	- untuk menambahkan container ke network kita bisa menambahkan perintah --network ketika membuat container misal: docker container create --name container --network namanetwork image:tag
 	- jika diperlukan kita juga bisa menghapus container dari network dengan perintah: docker network disconnect namanetwork namacontainer
 	- jika containernya sudah terlanjur dibuat kita juga bisa menambahkan container yang sudah di buat ke network dengan perintah: docker network connect namanetwork namacontainer
+
+24. Inspect:
+	- setelah kita mendowload imae atau membuat network volume dan container kadang kita ingin melihat detail dari tiap hal tersebut
+	- misal kita ingin melihat dari image perintah apa yang digunakan oleh image tersebut environment variabel apa yang digunakan atau port apa yang digunakan
+	- misal kita juga ingin melihat detail dari container volume apa yang digunakan environment variable ap yang digunakan port forwading apa yang digunakan dan lain-lain
+	- docker memiliki fitur bernama inspect yang bisa digunakan di image container volume dan network
+	- dengan fitur ini kita bisa melihat detail dari tiap hal yang ada di docker
+	- untuk melihat detail dari image gunakan: docker image inspect namaimage
+	- untuk melihat detail dari container gunakan: docker container inspect namacontainer
+	- untuk melihat detail dari volume gunakan: docker volume inspect namavolume
+	- untuk melihat detail dari image gunakan: docker network inspect namanetwork
