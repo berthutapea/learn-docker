@@ -191,3 +191,7 @@ Bagian 1 Docker Dasar
 	- untuk menghapus semua network yang tidak digunakan container gunakan: docker network prune
 	- untuk menghapus semua volume yang tidak digunakan container gunakan docker volume prune
 	- atau kita bisa menggunakan satu perintah untuk menghapus container network dan image yang sudah tidak digunakan menggunakan perintah: docker system prune
+
+26. Materi Selanjutnya:
+	- docker dockerfile
+	- docker compose
