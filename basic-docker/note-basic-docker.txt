@@ -162,3 +162,11 @@ Bagian 1 Docker Dasar
 	- untuk membuat network baru kita bisa menggunakan perintah: docker network create --driver namadriver namanetwork
 	- untuk mengahapus network kita bisa gunakan perintah: docker network rm namanetwork
 	- network kita tidak bisa dihapus jika sudah digunakan oleh container kita harus menghapus container nya terlebih dahulu dari network
+
+23. Container Network:
+	- setelah kita membuat network kita bisa menambahkan container ke network
+	- container yang terdapat di dalam network yang sama bisa saling berkomunikasi (tergantung jenis driver network nya)
+	- container bisa mengakses container lain dengan menyebutkan hostname dari container nya yaitu nama container nya
+	- untuk menambahkan container ke network kita bisa menambahkan perintah --network ketika membuat container misal: docker container create --name container --network namanetwork image:tag
+	- jika diperlukan kita juga bisa menghapus container dari network dengan perintah: docker network disconnect namanetwork namacontainer
+	- jika containernya sudah terlanjur dibuat kita juga bisa menambahkan container yang sudah di buat ke network dengan perintah: docker network connect namanetwork namacontainer
