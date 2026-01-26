@@ -181,3 +181,13 @@ Bagian 1 Docker Dasar
 	- untuk melihat detail dari container gunakan: docker container inspect namacontainer
 	- untuk melihat detail dari volume gunakan: docker volume inspect namavolume
 	- untuk melihat detail dari image gunakan: docker network inspect namanetwork
+
+25. Prune:
+	- saat kita menggunakan docker kadang ada kalanya kita ingin membersihkan hal-hal yang sudah tidak digunakan lagi di docker misal container yang sudah di stop image yang tidak digunakan oleh container atau volume yang tidak digunakan oleh container
+	- fitur untuk membersihkan secara otomatis di docker bernama prune
+	- hampir di semua perintah di docker mendukung prune
+	- untuk menghapus semua container yang sudah stop gunakan: docker container prune
+	- untuk menghapus semua image yang tidak digunakan container gunakan: docker image prune
+	- untuk menghapus semua network yang tidak digunakan container gunakan: docker network prune
+	- untuk menghapus semua volume yang tidak digunakan container gunakan docker volume prune
+	- atau kita bisa menggunakan satu perintah untuk menghapus container network dan image yang sudah tidak digunakan menggunakan perintah: docker system prune
