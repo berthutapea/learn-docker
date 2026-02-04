@@ -13,3 +13,15 @@ Bagian 2 Docker Dockerfile
 	- entrypoint instruction
 	- volume instruction
 	- dan lain-lain
+
+29. Pengenalan Dockerfile:
+	- pada kelas docker dasar kita sudah banyak belajar bagaimana cara kerja docke dari menggunakan docker image sampai membuat docker container
+	- sekarang bagaimana jika kita ingin membuat docker image sendiri
+	- pembuatan docker image bisa dilakukan engan menggunakan instrukri yang kita simpan di dalam file dockerfile
+	- dockerfile adalah file text yang berisi semua perintah yang bisa kita gunakan untuk membuat sebuah docker image
+	- anggap saja semua instruksi untuk mejalankan aplikasi kita kita simpan di dalam dockerfile nanti dockerfile tersenut akan dieksekusi sebagai perintah untuk membuat docker image
+	- untuk membuat docker image dari dockerfile kita bisa menggunakan perintah docker build
+	- saat membuat docker image dengan docker build build nama image secara otomatis akan dibuat random dan biasanya kita ingin menambahkan nama/tag pada image nya kita bisa mengubahnya dengan menambahkan perintah -t
+	- misal berikut adalah contoh cara menggunakan docker build:
+	- docker build -t gilbert/app:1.0.0 folder-dockerfile
+	- docker build -t gilbert/app:1.0.0 gilbert/app:latest folder-dockerfile
