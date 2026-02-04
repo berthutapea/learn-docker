@@ -25,3 +25,11 @@ Bagian 2 Docker Dockerfile
 	- misal berikut adalah contoh cara menggunakan docker build:
 	- docker build -t gilbert/app:1.0.0 folder-dockerfile
 	- docker build -t gilbert/app:1.0.0 gilbert/app:latest folder-dockerfile
+
+30. Dockerfile Format:
+	- seperti namanya docker file biasanya dibuat dalam sebuah file dengan nama dockerfile tidak memiliki extension apapun
+	- walaupun sebenarnya bisa saja kita membuat dengan nama lain namun direkomandasikan menggunakan nama dockerfile
+	- secara sederhana berikut adalah format untuk file dockerfile # komentar instruction arguments
+	- # digunakan untuk menambah komentar kode dalam baris tersebut secara otomatis dianggap komentar
+	- instruction adalah perintah yang digunakan di dockerfile ada banyak perintah yang tersedia dan penulisan perintahnya case insensitive sehingga kita bisa gunakan huruf besar atau kecil namun rekomandasinya adalah menggunakan uppercase
+	- arguments adalah data argument untuk instruction yang menyesuaikan dengan jenis instruction yang digunakan
