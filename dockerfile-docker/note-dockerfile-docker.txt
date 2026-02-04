@@ -1,0 +1,15 @@
+Bagian 2 Docker Dockerfile
+27. Slide Source Code:
+	- Slide : https://docs.google.com/presentation/d/1bW0-88g_s54-X_rBLaZ-N2EhW3HngAZSN6UInyBlIn8/edit?usp=sharing
+	- Source Code : https://github.com/ProgrammerZamanNow/belajar-docker-dockerfile
+
+28. Pendahuluan:
+	- docker dasar
+	- pengenalan dockerfile
+	- from instruction
+	- label instruction
+	- expose instruction
+	- environment variable instruction
+	- entrypoint instruction
+	- volume instruction
+	- dan lain-lain
