@@ -13,3 +13,14 @@ docker build -t berthutapea/run run --progress=plain --no-cache
 docker image ls | grep berthutapea
 
 docker image ls | findstr berthutapea
+
+# CMD Instruction
+docker build -t berthutapea/command command
+
+docker image inspect berthutapea/command
+
+docker container create --name command berthutapea/command
+
+docker container start command
+
+docker container logs command

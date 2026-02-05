@@ -50,3 +50,12 @@ Bagian 2 Docker Dockerfile
 	- secar default di docker terbaru tidak akan menampilkan tulisan detail dari buildnya
 	- jika kita ingin menampilkan detailnya kita bisa gunakan perintah --progress=plain
 	- selain itu juga docker build juga melakukan cache jika kita ingin mengulangi lagi tanpa menggunakan cache kita bisa gunakan perintah --no-cache
+
+33. Command Instruction:
+	- cmd atau command merupakan instruksi yang digunakan ketika docker container berjalan
+	- cmd tidak akan dijalankan ketika proses build namun dijalankan ketika docker container berjalan
+	- dalam dockerfile kita tidak bisa menambah lebih dari satu instruksi cmd jika kita tambahkan lebih dari satu instruksi cmd maka yang akan digunakan untuk menjalankan docker container adalah instruksi cmd yang terakhir
+	- perintah cmd memeliki beberapa format
+	- CMD command param param
+	- CMD ["executable","param","param"]
+	- CMD ["param","param"] akan menggunakan executable entry pint yang akan dibahas di chapter terpisah
