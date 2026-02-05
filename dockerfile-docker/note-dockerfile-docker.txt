@@ -39,3 +39,14 @@ Bagian 2 Docker Dockerfile
 	- from digunakan untuk membuat build stage dari image yang kita tentukan
 	- biasanya jarang sekali kita akan membuat docker image dari scratch (kosongan) biasanya kita akan membuat docker image dari docker image lain yang sudah ada
 	- untuk menggunakan from kita bisa gunakan perintah: from image:version
+
+32. Run Instruction:
+	- run adalah sebuah instruksi untuk mengeksekusi perintah di dalam image pada saat build stage
+	- hasil perintah run akan di commit dalam perubahan image tersebut jadi perintah run akan dieksekusi pada saat proses docker build saja setelah menjadi docker image perintah tersebut tidak akan dijalankan lagi
+	- jadi ketika kita menjalankan docker container dari image tersebut maka perintah run tidak akan di jalankan lagi
+	- perintah run memiliki 2 format
+	- RUN command
+	- RUN ["executable","argument","..."]
+	- secar default di docker terbaru tidak akan menampilkan tulisan detail dari buildnya
+	- jika kita ingin menampilkan detailnya kita bisa gunakan perintah --progress=plain
+	- selain itu juga docker build juga melakukan cache jika kita ingin mengulangi lagi tanpa menggunakan cache kita bisa gunakan perintah --no-cache
