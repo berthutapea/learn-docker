@@ -33,3 +33,9 @@ Bagian 2 Docker Dockerfile
 	- # digunakan untuk menambah komentar kode dalam baris tersebut secara otomatis dianggap komentar
 	- instruction adalah perintah yang digunakan di dockerfile ada banyak perintah yang tersedia dan penulisan perintahnya case insensitive sehingga kita bisa gunakan huruf besar atau kecil namun rekomandasinya adalah menggunakan uppercase
 	- arguments adalah data argument untuk instruction yang menyesuaikan dengan jenis instruction yang digunakan
+
+31. From Instruction:
+	- saat kita membuat docker image biasanya perintah pertama adalah melakukan buid stage dengan instruksi from
+	- from digunakan untuk membuat build stage dari image yang kita tentukan
+	- biasanya jarang sekali kita akan membuat docker image dari scratch (kosongan) biasanya kita akan membuat docker image dari docker image lain yang sudah ada
+	- untuk menggunakan from kita bisa gunakan perintah: from image:version
