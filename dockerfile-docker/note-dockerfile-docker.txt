@@ -59,3 +59,11 @@ Bagian 2 Docker Dockerfile
 	- CMD command param param
 	- CMD ["executable","param","param"]
 	- CMD ["param","param"] akan menggunakan executable entry pint yang akan dibahas di chapter terpisah
+
+34. Label Instruction:
+	- instruksi label merupakan instruksi yang diguakan untuk menambahkan metadata ke dalam docker image yang kita buat
+	- metadata adalah informasi tambahan misal seperti nama aplikasi pembuat website perusahaan lisensi dan lain-lain
+	- metadata hanya berguna sebagai informasi saja tidak akan digunakan ketika kita menjalankan docker container
+	- berikut adala format instruksi label
+	- LABEL <key>=<value>
+	- LABEL <key1>=<value1><key2>=<value2> dan seterusnya
